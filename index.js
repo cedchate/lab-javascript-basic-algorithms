@@ -65,33 +65,40 @@ while (longText.indexOf(" et ") != -1) {
 console.log(count);
 console.log(i);
 
-let phraseToCheck = "A man, a pla, a canal, Panama!";
-let str = "";
-let str2 = "";
-let phraseReverse = "";
-for (let i=0; i<phraseToCheck.length; i++) {
+// Bonus 2
 
-	if(phraseToCheck.charCodeAt(i) >= 65 && phraseToCheck.charCodeAt(i) <= 90 || phraseToCheck.charCodeAt(i) >= 97 && phraseToCheck.charCodeAt(i) <= 122){
-		str += phraseToCheck[i];
-	}
-}
-for (let i = phraseToCheck.length-1; i >= 0; i--){
-	phraseReverse += phraseToCheck[i];
-}
-	
-	for (let i=0; i<phraseReverse.length; i++) {
-		if(phraseReverse.charCodeAt(i) >= 65 && phraseReverse.charCodeAt(i) <= 90 || 			phraseReverse.charCodeAt(i) >= 97 && phraseReverse.charCodeAt(i) <= 122){
-			str2 += phraseReverse[i];
+function join(strToCheck) {
+	let joinedStr = "";
+
+	for (let i = 0; i < strToCheck.length; i++) {
+		if (strToCheck.charCodeAt(i) >= 65 && strToCheck.charCodeAt(i) <= 90 
+			|| strToCheck.charCodeAt(i) >= 97 && strToCheck.charCodeAt(i) <= 122) {
+				joinedStr += strToCheck[i];
 		}
 	}
-
-if (str.toUpperCase() === str2.toUpperCase()) {
-	console.log("The phrase to check is a Palindrome.");
-}else {
-	console.log("The phrase to check is not a Palindrome.");
+	return joinedStr;
 }
 
+function reverse(str) {
+	let reversedStr = "";
+	for (let i = str.length - 1; i >= 0; i--) {
+		reversedStr += str[i];
+	}
+	return reversedStr;
+}
 
+function upperCaseAndCheck(str1, str2) {
+	if (str1.toUpperCase() === str2.toUpperCase()) {
+		console.log("The phrase to check is a Palindrome.");
+   } else {
+		console.log("The phrase to check is not a Palindrome.");
+   }
+}
 
+let phraseToCheck = "A man, a plan, a canal, Panama!";
+let str1 = "";
+let str2 = "";
 
-
+str1 = join(phraseToCheck);
+str2 = reverse(str1);
+upperCaseAndCheck(str1, str2);
