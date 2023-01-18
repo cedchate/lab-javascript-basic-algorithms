@@ -65,8 +65,15 @@ while (longText.indexOf(" et ") != -1) {
 console.log(count);
 console.log(i);
 
-
-
+let phraseToCheck = "A man, a plan, a canal, Panama!";
+let str = "";
+for (i=0; i<phraseToCheck.length; i++) {
+	console.log(phraseToCheck.charCodeAt(i));
+	if(65<=phraseToCheck.charCodeAt(i)<=90 || 97<=phraseToCheck.charCodeAt(i)<=122){
+		str += phraseToCheck[i];
+	}
+}
+console.log(str);
 
 
 
