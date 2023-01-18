@@ -16,7 +16,7 @@ else
 
 let driverCapital = "";
 
-for(i = 0 ; i < hacker1.length; i++){
+for(let i = 0 ; i < hacker1.length; i++){
 	
 	driverCapital += hacker1[i].toUpperCase();
 	
@@ -28,7 +28,7 @@ for(i = 0 ; i < hacker1.length; i++){
 
 let navigatorReverse= "" ;
 
-for (i = hacker2.length-1; i >= 0; i--){
+for (let i = hacker2.length-1; i >= 0; i--){
 	navigatorReverse += hacker2[i];
 }
 
@@ -65,16 +65,31 @@ while (longText.indexOf(" et ") != -1) {
 console.log(count);
 console.log(i);
 
-let phraseToCheck = "A man, a plan, a canal, Panama!";
+let phraseToCheck = "A man, a pla, a canal, Panama!";
 let str = "";
-for (i=0; i<phraseToCheck.length; i++) {
-	console.log(phraseToCheck.charCodeAt(i));
-	if(65<=phraseToCheck.charCodeAt(i)<=90 || 97<=phraseToCheck.charCodeAt(i)<=122){
+let str2 = "";
+let phraseReverse = "";
+for (let i=0; i<phraseToCheck.length; i++) {
+
+	if(phraseToCheck.charCodeAt(i) >= 65 && phraseToCheck.charCodeAt(i) <= 90 || phraseToCheck.charCodeAt(i) >= 97 && phraseToCheck.charCodeAt(i) <= 122){
 		str += phraseToCheck[i];
 	}
 }
-console.log(str);
+for (let i = phraseToCheck.length-1; i >= 0; i--){
+	phraseReverse += phraseToCheck[i];
+}
+	
+	for (let i=0; i<phraseReverse.length; i++) {
+		if(phraseReverse.charCodeAt(i) >= 65 && phraseReverse.charCodeAt(i) <= 90 || 			phraseReverse.charCodeAt(i) >= 97 && phraseReverse.charCodeAt(i) <= 122){
+			str2 += phraseReverse[i];
+		}
+	}
 
+if (str.toUpperCase() === str2.toUpperCase()) {
+	console.log("The phrase to check is a Palindrome.");
+}else {
+	console.log("The phrase to check is not a Palindrome.");
+}
 
 
 
